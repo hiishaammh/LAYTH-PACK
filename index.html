@@ -27,7 +27,7 @@ footer{margin-top:35px;background:#073f45;color:#fff;padding:25px 0;text-align:c
 @media(max-width:800px){.products{grid-template-columns:repeat(2,1fr)}.categories{grid-template-columns:repeat(3,1fr)}.features{grid-template-columns:repeat(2,1fr)}.hero h1{font-size:29px}.hero-art{font-size:70px}}
 @media(max-width:520px){.nav{height:auto;padding:10px 0;flex-wrap:wrap}.logo{width:100%;text-align:center}.search{order:3;flex-basis:100%}.hero{padding:25px 18px}.hero-art{display:none}.categories{grid-template-columns:repeat(2,1fr)}.products{gap:10px}.pic{height:145px;font-size:58px}.product h3{font-size:15px}.price{font-size:18px}}
 
-/* LAYTHPACK square image layout */
+/* LAYTH SHOP square image layout */
 .categories{grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
 .cat{background:transparent;border:0;border-radius:16px;padding:10px 6px;text-align:center;font-weight:900;cursor:pointer;box-shadow:none;min-width:0}
 .cat:hover,.cat.active{color:var(--main);border:0;box-shadow:none}
@@ -62,7 +62,7 @@ footer{margin-top:35px;background:#073f45;color:#fff;padding:25px 0;text-align:c
 
   <main class="container">
 <section class="hero">
-  <div><h1>مرحبا بك في LAYTHPACK</h1><p>منتوجات متنوعة بثمن مناسب، اختار القسم ديالك واكتشف العروض.</p><a class="btn" href="#shop">شوف المنتوجات ↓</a></div>
+  <div><h1>مرحبا بك في LAYTH SHOP</h1><p>منتوجات متنوعة بثمن مناسب، اختار القسم ديالك واكتشف العروض.</p><a class="btn" href="#shop">شوف المنتوجات ↓</a></div>
   <div class="hero-art">🛍️</div>
 </section>
 
@@ -87,7 +87,7 @@ footer{margin-top:35px;background:#073f45;color:#fff;padding:25px 0;text-align:c
 </div>
 </main>
 
-<footer><div class="container"><strong>LAYTHPACK</strong><br><span class="small">متجر إلكتروني متعدد المنتجات • © 2026</span></div></footer>
+<footer><div class="container"><strong>LAYTH SHOP</strong><br><span class="small">متجر إلكتروني متعدد المنتجات • © 2026</span></div></footer>
 
 <div class="modal" id="modal"><div class="box">
 <button class="close" onclick="closeModal()">×</button>
@@ -128,7 +128,7 @@ function render(){
 }
 document.querySelectorAll('.cat').forEach(el=>el.addEventListener('click',()=>{document.querySelectorAll('.cat').forEach(x=>x.classList.remove('active'));el.classList.add('active');selected=el.dataset.cat;render()}));
 searchEl.addEventListener('input',render);
-function orderNow(id){const p=products.find(x=>x.id===id);const msg=`السلام عليكم، بغيت نطلب من LAYTHPACK:\nالمنتوج: ${p.name}\nالثمن الحالي: ${p.price} درهم\nالثمن السابق: ${p.old} درهم`;window.open('https://wa.me/'+WHATSAPP_NUMBER+'?text='+encodeURIComponent(msg),'_blank')}
+function orderNow(id){const p=products.find(x=>x.id===id);const msg=`السلام عليكم، بغيت نطلب من LAYTH SHOP:\nالمنتوج: ${p.name}\nالثمن الحالي: ${p.price} درهم\nالثمن السابق: ${p.old} درهم`;window.open('https://wa.me/'+WHATSAPP_NUMBER+'?text='+encodeURIComponent(msg),'_blank')}
 function add(id){cart.push(products.find(p=>p.id===id));update();openCart()}
 function update(){document.getElementById('cartCount').textContent=cart.length}
 function openCart(){document.getElementById('modalTitle').textContent='🛒 تأكيد الطلب';document.getElementById('cartItems').innerHTML=cart.length?cart.map(p=>`<div style="padding:8px;border-bottom:1px solid #eee">${p.icon} ${p.name} — <b>${p.price} درهم</b></div>`).join(''):'<p>السلة فارغة. اختار شي منتوج أولاً.</p>';document.getElementById('modal').classList.add('show')}
